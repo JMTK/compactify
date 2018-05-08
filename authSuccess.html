@@ -1,0 +1,96 @@
+<div class="authSuccess container-fluid">
+    <div class="row">
+        <div class="userInfo col-md-6 row">
+            <div class="image-cropper profilePic col-md-6">
+            </div>
+            <div class="col-md-6">
+                <span class="displayName" id="displayName" ng-bind="userName"></span>
+                <br />
+                <button type="button" id="logout" class="SpotifyButton">
+                    <i class="glyphicon glyphicon-log-out"></i>&nbsp;Logout
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-6 text-right logo">
+            [cmpct]<span style="color: #888">ify</span>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="playlists col-md-6">
+            <div>
+                <label class="playlistLabel customURILabel">
+                    <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
+                    <span class="checkmark"></span>
+                    <input type="text" class="customURI" placeholder="spotify:user:1285769120:playlist:6CiKpjdgacbeSyJ2VZEOwt" style="width: 80%; max-width: 345px;" />
+                </label>
+            </div>
+            <div ng-repeat="playlist in playlists">
+                <label class="playlistLabel" ng-click="success.activePlaylist = playlist.name">
+                    <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
+                    <span class="checkmark"></span>
+                    <span class="playlistName">{{playlist.name}}</span><span class="playlistCount">{{playlist.tracks.total}}</span>
+                </label>
+            </div>
+        </div>
+        <div class="playlistOptions col-md-6">
+            <p>
+                Compactify is a Spotify utility application used for creating smaller versions of playlists.
+                This can be useful for longer playlists that you'd like to demo to someone, or to download for offline play.
+            </p>
+            <b>Instructions:</b>
+            <ul>
+                <li>Select a playlist or enter your own URI.</li>
+                <li>Choose your limit options.</li>
+                <li>Click the 'Create' button to get a compacted version of your playlist.</li>
+            </ul>
+            <hr />
+            <script type="text/javascript">
+                function fixDiv() {
+                    var $cache = $('.sticky');
+                    if ($(window).scrollTop() > 300)
+                      $cache.css({
+                        'position': 'fixed',
+                        'top': '10px'
+                      });
+                    else
+                      $cache.css({
+                        'position': 'relative',
+                        'top': 'auto'
+                      });
+                  }
+                  $(window).scroll(fixDiv);
+                  fixDiv();
+            </script>
+            <div class="sticky">
+                <div>
+                    <span>Playlist name:</span>&nbsp;<input type="text" id="playlistName" />
+                </div>
+                <br>
+                <div>
+                    No more than <input type="number" value="30" id="songLimit" /> songs <small class="muted"></small>
+                </div>
+                <br>
+                <div>
+                    No more than <input type="number" id="maxDurationCount" value="60" /> <select class="select2" id="UOM"><option value="60000">minutes</option><option value="3600000">hours</option></select>
+                </div>
+                <br>
+                <div style="display: none;">
+                    Song variance<sup class="muted" title="Higher variance will make it so artists/albums are less likely to be repeated.">[?]</sup>: <span class="varianceLimit">Low</span>&nbsp;<input id="varianceLevel" type="range" min="1" value="3" max="5" step="1" list="ticks" />&nbsp;<span class="varianceLimit">High</span>
+                    <datalist id="ticks">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </datalist>
+                </div>
+                <br>
+                <br>
+                <button disabled title="Make sure you select a playlist and specify your options." id="createButton" class="SpotifyButton"><i class="glyphicon glyphicon-plus"></i>&nbsp;Create Compact Playlist</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Compactify, by JMTK</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="JMTK Application Development" />
+    <meta name="keywords" content="spotify,app,playlist,generator,music,random,shuffle,compactify,cmpctify,jmtk,jacob morrison,taylor kimmett,application,compactor,compacter" />
+    <meta name="description" content="A Spotify playlist compactor and generator." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="Scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+	<script src="Scripts/angular.min.js"></script>
+	<script src="Scripts/bootbox.min.js"></script>
+	<script src="Scripts/angular-route.min.js"></script>
+
+	<script type="text/javascript" src="spotify.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body ng-app="compactify">
+    <div class="mymodal"></div>
+    <div ng-view></div>
+</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-16709106-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16709106-3');
+</script>
+</html>

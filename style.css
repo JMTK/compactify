@@ -1,0 +1,230 @@
+body {
+    background-color: #f7f7f7;
+	padding: 12px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sticky {
+    background-color: #f7f7f7;
+    min-width: 200px;
+    width: 50%;
+}
+.withImage:after {
+    background-image: url('https://i.imgur.com/BWmhy2I.jpg');
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    top:0;right:0;left:0;bottom:0;
+    position: absolute;
+    content:"";
+    z-index:-1;
+    background-size: cover;
+    background-position: center center;
+}
+.needsAuth {
+    padding: 40px;
+    border-radius: 4px;
+    margin:0 auto;
+    margin-top: 10%;
+    max-width: 65%;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #aaa;
+}
+
+.displayName {
+	font-size: 26px;
+}
+.image-cropper {
+	margin-left: 25px;
+	width: 85px;
+	height: 85px;
+	position: relative;
+    background-size: cover;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.profilePic {
+	border: 1px inset #222;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/*.image-cropper img {
+	margin: 0 auto;
+    margin-left: 25px;
+	width:auto;
+    position: absolute;
+	height: 100%;
+}*/
+
+.AuthButton {
+	font-size: large;
+}
+
+.SpotifyButton,  .playlists label.selectedPlaylist, .playlists .playlistLabel {
+    position: relative;
+    background: none;
+    background-color: #1DB954;
+    border: 1px solid #18ac4c;
+    border-radius: 3px;
+    opacity: 1;
+    padding: 8px 12px;
+    color: #fefefe;
+}
+
+.SpotifyButton:disabled, .SpotifyButton:disabled:hover {
+    background-color: #aaa;
+    cursor: not-allowed;
+	opacity: 0.7;
+    border: 1px solid lightgray;
+}
+
+.playlists .playlistLabel {
+	display: block;
+	font-weight: normal;
+    background-color: #777;
+    cursor: pointer;
+	width: 90%;
+    opacity: 0.7;
+    border: 1px solid #888;
+}
+
+	.playlists .playlistLabel span {
+		color: #fff;
+	}
+
+	.playlists .playlistLabel .customURI {
+		color: black;
+	}
+
+.playlists .playlistLabel:hover {
+    border-color: #34db6f;
+}
+
+.SpotifyButton {
+    display: inline-block;
+}
+.playlists label.selectedPlaylist {
+    display: block;
+    padding: 16px 12px;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.SpotifyButton:hover {
+    color: white;
+    background-color: #34db6f;
+}
+.playlistOptions {
+    border-radius: 4px;
+}
+#displayName {
+    vertical-align: top;
+}
+
+#playlistName {
+    min-width: 250px;
+}
+
+.logo {
+	color: black;
+	font-size: 68px;
+}
+
+hr {
+	margin: 10px auto;
+}
+
+* {
+	transition: 0.3s all;
+}
+
+.varianceLimit {
+    font-weight: bold;
+}
+
+.playlistOptions input[type=number] {
+    max-width: 40px;
+}
+.playlistOptions select {
+    max-width: 150px;
+}
+
+.playlists input[type=radio] {
+    display: none;
+}
+
+#varianceLevel {
+	max-width: 240px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.playlists .selectedPlaylist > .checkmark:before {
+    content: '\2713';
+    display: inline-block;
+    vertical-align: text-top;
+    text-align: center;
+    width: 100%;
+}
+.playlists .playlistCount {
+    float: right;
+}
+
+.playlists .selectedPlaylist .checkmark {
+    display: inline-block;
+    background-color: rgba(223,223,223, 0.5);
+    color: #666;
+    margin: 5px;
+    border-radius:50%;
+    position:absolute;
+    left: 8px;
+    top: 8px;
+    border: 1px solid rgba(23,23,23,0.3);
+    width: 25px;
+    height: 25px;
+}
+
+.mymodal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+    url('https://i.stack.imgur.com/FhHRx.gif') 
+    50% 50% 
+    no-repeat;
+
+}
+
+/* Anytime the body has the loading class, our
+      mymodal element will be visible */
+body.loading .mymodal {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .needsAuth {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        right:0;
+        left: 0;
+        max-width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        overflow: hidden;
+
+    }
+    .AuthButton {
+        font-size: 2em;
+    }
+    .logo {
+        font-size: 40px;
+
+    }
+}
