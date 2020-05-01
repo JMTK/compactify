@@ -23,14 +23,14 @@
                 <label class="playlistLabel customURILabel">
                     <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
                     <span class="checkmark"></span>
-                    <input type="text" class="customURI" placeholder="spotify:user:1285769120:playlist:6CiKpjdgacbeSyJ2VZEOwt" style="width: 80%; max-width: 345px;" />
+                    <input type="text" class="customURI" placeholder="spotify:user:1285769120:playlist:6CiKpjdgacbeSyJ2VZEOwt" title="Copy the Spotify URI of the playlist you want" style="width: 80%; max-width: 345px;" />
                 </label>
             </div>
             <div ng-repeat="playlist in playlists">
                 <label class="playlistLabel" ng-click="success.activePlaylist = playlist.name">
                     <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
                     <span class="checkmark"></span>
-                    <span class="playlistName">{{playlist.name}}</span><span class="playlistCount">{{playlist.tracks.total}}</span>
+                    <span class="playlistName">{{playlist.name}}</span><span class="playlistCount">{{playlist.tracks.total}} songs</span>
                 </label>
             </div>
         </div>
@@ -38,13 +38,16 @@
             <p>
                 Compactify is a Spotify utility application used for creating smaller versions of playlists.
                 This can be useful for longer playlists that you'd like to demo to someone, or to download for offline play.
+                <br><br>
+                Made by <a href="https://jmtk.co/" target=_blank>JMTK</a>
             </p>
+            <hr />
             <b>Instructions:</b>
-            <ul>
+            <ol>
                 <li>Select a playlist or enter your own URI.</li>
                 <li>Choose your limit options.</li>
                 <li>Click the 'Create' button to get a compacted version of your playlist.</li>
-            </ul>
+            </ol>
             <hr />
             <script type="text/javascript">
                 function fixDiv() {
@@ -93,4 +96,3 @@
         </div>
     </div>
 </div>
-

@@ -3,13 +3,22 @@ body {
 	padding: 12px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.albumArt {
+    width: auto;
+    height: 50px;
+    margin-right: 5px;
+}
+.followedArtist {
+    font-size: 24px;
+    margin: 5px;
+}
 .sticky {
     background-color: #f7f7f7;
     min-width: 200px;
     width: 50%;
 }
 .withImage:after {
-    background-image: url('https://i.imgur.com/BWmhy2I.jpg');
+    /*background-image: url('https://jmtk.co/imgupload/images/71d86ab0BWmhy2I[1].jpg');
     background-repeat: no-repeat;
     opacity: 0.4;
     top:0;right:0;left:0;bottom:0;
@@ -17,7 +26,7 @@ body {
     content:"";
     z-index:-1;
     background-size: cover;
-    background-position: center center;
+    background-position: center center;*/
 }
 .needsAuth {
     padding: 40px;
@@ -26,8 +35,8 @@ body {
     margin-top: 10%;
     max-width: 65%;
     text-align: center;
-    background: rgba(255,255,255,0.95);
-    border: 1px solid #aaa;
+    /*background: rgba(255,255,255,0.95);
+    border: 1px solid #aaa;*/
 }
 
 .displayName {
@@ -59,6 +68,10 @@ body {
 
 .AuthButton {
 	font-size: large;
+}
+
+a {
+    color: #1DB954;
 }
 
 .SpotifyButton,  .playlists label.selectedPlaylist, .playlists .playlistLabel {
@@ -108,7 +121,7 @@ body {
     display: block;
     padding: 16px 12px;
     padding-left: 50px;
-    width: 100%;
+    width: 95%;
 }
 
 .SpotifyButton:hover {
@@ -143,8 +156,14 @@ hr {
     font-weight: bold;
 }
 
+input, select {
+    padding: 5px;
+    border: 1px solid #d8d8d8 !important;
+    outline: none;
+}
+
 .playlistOptions input[type=number] {
-    max-width: 40px;
+    max-width: 48px;
 }
 .playlistOptions select {
     max-width: 150px;
@@ -166,6 +185,8 @@ hr {
     vertical-align: text-top;
     text-align: center;
     width: 100%;
+    position: relative;
+    top: 2px;
 }
 .playlists .playlistCount {
     float: right;
@@ -173,14 +194,15 @@ hr {
 
 .playlists .selectedPlaylist .checkmark {
     display: inline-block;
-    background-color: rgba(223,223,223, 0.5);
-    color: #666;
+    background-color: rgba(223,223,223, 0.3);
+    color: #fff;
+    font-weight: bold;
     margin: 5px;
-    border-radius:50%;
-    position:absolute;
+    border-radius: 50%;
+    position: absolute;
     left: 8px;
     top: 8px;
-    border: 1px solid rgba(23,23,23,0.3);
+    border: 1px solid rgba(255,255,255,0.3);
     width: 25px;
     height: 25px;
 }
