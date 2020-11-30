@@ -6,6 +6,9 @@ var gSpotify;
         .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
             $locationProvider.hashPrefix('');
             $routeProvider
+                .when('/', {
+                    templateUrl: 'main.html'
+                })
                 .when('/main', {
                     templateUrl: 'main.html'
                 })
@@ -32,6 +35,7 @@ var gSpotify;
                 .otherwise({
                     redirectTo: '/noAuth'
                 });
+            $locationProvider.html5Mode(true);
         }])
         .service('Spotify', Spotify)
         .controller('authorizing', function($scope, $routeParams) {
