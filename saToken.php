@@ -1,5 +1,5 @@
 <?php
-$bottoken = "NDViZjFhZmMzNjE5NGZmNDgyZGU1NTAxNTViM2NhZjM6YTEyMmE3MzcwNTc0NGNlOWFkNTIxMzI4MGY5YmVlODM=";
+$bottoken = "";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
