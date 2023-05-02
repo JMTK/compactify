@@ -1,7 +1,7 @@
 <div class="authSuccess container-fluid">
     <div class="row">
         <div class="userInfo col-md-6 row">
-            <div class="image-cropper profilePic ">
+            <div class="image-cropper profilePic">
             </div>
             <div class="col-md-6">
                 <span class="displayName" id="displayName" ng-bind="userName"></span>
@@ -21,14 +21,14 @@
         <div class="playlists col-md-6">
             <div>
                 <label class="playlistLabel customURILabel">
-                    <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
+                    <input type="checkbox" name="usernames"/>
                     <span class="checkmark"></span>
                     <input type="text" class="customURI" placeholder="spotify:user:1285769120:playlist:6CiKpjdgacbeSyJ2VZEOwt" title="Copy the Spotify URI of the playlist you want" style="width: 80%; max-width: 345px;" />
                 </label>
             </div>
             <div ng-repeat="playlist in playlists">
-                <label class="playlistLabel" ng-click="success.activePlaylist = playlist.name">
-                    <input type="radio" name="usernames" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
+                <input type="checkbox" name="usernames" ng-model="selectedPlaylists[playlist.id]" id="{{playlist.snapshot_id}}" data-snapshot="{{playlist.snapshot_id}}" value="{{playlist.tracks.href}}" />
+                <label class="playlistLabel" ng-click="highlightRow()" for="{{playlist.snapshot_id}}">
                     <span class="checkmark"></span>
                     <span class="playlistName">{{playlist.name}}</span><span class="playlistCount">{{playlist.tracks.total}} songs</span>
                 </label>
@@ -68,7 +68,7 @@
             </script>
             <div class="sticky">
                 <div>
-                    <span>Playlist name:</span>&nbsp;<input type="text" id="playlistName" />
+                    <span>Playlist name:</span>&nbsp;<input type="text" id="playlistName" ng-value="playlistName" />
                 </div>
                 <br>
                 <div>
@@ -91,7 +91,7 @@
                 </div>
                 <br>
                 <br>
-                <button disabled title="Make sure you select a playlist and specify your options." id="createButton" class="SpotifyButton"><i class="glyphicon glyphicon-plus"></i>&nbsp;Create Compact Playlist</button>
+                <button title="Make sure you select a playlist and specify your options." ng-click="createClick()" id="createButton" class="SpotifyButton"><i class="glyphicon glyphicon-plus"></i>&nbsp;Create Compact Playlist</button>
             </div>
         </div>
     </div>
